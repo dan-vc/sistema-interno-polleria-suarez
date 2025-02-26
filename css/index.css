@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #342357;
+    --secondary: #5E77FF;
+    --tertiary: #222222;
+
+    --gray: #979797;
+    --light: #fff;
+    --border-light: #E0DBEB;
+    --background-light: #FCFDFD;
+
+    --red: #ff3b30;
+    --green: #4cd964;
+
+    --radius-l: 24px;
+    --radius-m: 12px;
+    --radius-s: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow';
+    color: var(--tertiary);
+}
+
+body {
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input {
+    background: var(--background-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-s);
+    padding: 1rem;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+a {
+    display: block;
+    text-decoration: none;    
+}
+
+.link{
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: all ease 0.3s;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.btn {
+    background: var(--secondary);
+    color: var(--light);
+    border: none;
+    text-decoration: none;
+    opacity: 1;
+    border-radius: var(--radius-s);
+    padding: .5rem 1rem;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.btn-red{
+    background: var(--red);
+}

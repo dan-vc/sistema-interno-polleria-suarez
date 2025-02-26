@@ -1,0 +1,90 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--light);
+    border-right: 1px solid var(--border-light);
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.nav-link {
+    width: 100%;
+    font-size: 20px;
+    color: var(--gray);
+    fill: var(--gray);
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.nav-link svg {
+    height: 25px;
+    width: auto;
+    margin: auto;
+}
+
+.nav-link.active {
+    color: var(--secondary);
+    fill: var(--secondary)
+}
+
+.nav-link.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 6px;
+    background-color: var(--secondary);
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+}
+
+body {
+    margin-left: 250px;
+}
+
+header {
+    width: 100%;
+    background-color: var(--light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.5s ease;
+}
+
+header h1{
+    font-size: 1.75rem;
+}
+
+header .profile-info{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .profile-info img{
+    border-radius: 99rem;
+}
