@@ -1,0 +1,49 @@
+table {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    border-spacing: 0;
+
+    & thead {
+        font-weight: bolder;
+        text-transform: uppercase;
+        background: var(--background-light);
+    }
+
+    & tbody {
+        font-weight: 600;
+        background: var(--light);
+    }
+
+    & th,
+    & td {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    & th:not(:last-child),
+    & td:not(:last-child) {
+        text-align: start;
+    }
+
+    & .link {
+        color: var(--blue);
+    }
+
+    & .tag {
+        margin: auto;
+        width: fit-content;
+        padding: .5rem 1rem;
+        border-radius: var(--radius-l);
+
+        &.tag-success {
+            background: var(--green);
+            color: var(--light);
+        }
+
+        &.tag-pending {
+            background: var(--orange);
+            color: var(--light);
+        }
+    }
+}

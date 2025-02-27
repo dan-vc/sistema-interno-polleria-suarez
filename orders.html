@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/sidebar&header.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/orders-table.css">
-    <link rel="stylesheet" href="css/product-card.css">
 </head>
 
 <body>
@@ -19,7 +18,7 @@
         <img src="img/LOGO.png" alt="Logo">
 
         <nav>
-            <a href="dashboard.html" class="nav-link active">
+            <a href="dashboard.html" class="nav-link">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
@@ -27,7 +26,7 @@
                 </svg>
                 Inicio
             </a>
-            <a href="orders.html" class="nav-link">
+            <a href="orders.html" class="nav-link active">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path
@@ -74,71 +73,10 @@
     </header>
 
     <main>
-        <section id="info-cards">
-            <div class="info-card">
-                <div class="icon-wrapper">
-                    <svg width="30" height="26" viewBox="0 0 30 26" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.34375 0.8125C1.56445 0.8125 0.9375 1.43945 0.9375 2.21875V5.03125C0.9375 5.81055 1.56445 6.4375 2.34375 6.4375H5.15625C5.93555 6.4375 6.5625 5.81055 6.5625 5.03125V2.21875C6.5625 1.43945 5.93555 0.8125 5.15625 0.8125H2.34375ZM11.25 1.75C10.2129 1.75 9.375 2.58789 9.375 3.625C9.375 4.66211 10.2129 5.5 11.25 5.5H28.125C29.1621 5.5 30 4.66211 30 3.625C30 2.58789 29.1621 1.75 28.125 1.75H11.25ZM11.25 11.125C10.2129 11.125 9.375 11.9629 9.375 13C9.375 14.0371 10.2129 14.875 11.25 14.875H28.125C29.1621 14.875 30 14.0371 30 13C30 11.9629 29.1621 11.125 28.125 11.125H11.25ZM11.25 20.5C10.2129 20.5 9.375 21.3379 9.375 22.375C9.375 23.4121 10.2129 24.25 11.25 24.25H28.125C29.1621 24.25 30 23.4121 30 22.375C30 21.3379 29.1621 20.5 28.125 20.5H11.25ZM0.9375 11.5938V14.4062C0.9375 15.1855 1.56445 15.8125 2.34375 15.8125H5.15625C5.93555 15.8125 6.5625 15.1855 6.5625 14.4062V11.5938C6.5625 10.8145 5.93555 10.1875 5.15625 10.1875H2.34375C1.56445 10.1875 0.9375 10.8145 0.9375 11.5938ZM2.34375 19.5625C1.56445 19.5625 0.9375 20.1895 0.9375 20.9688V23.7812C0.9375 24.5605 1.56445 25.1875 2.34375 25.1875H5.15625C5.93555 25.1875 6.5625 24.5605 6.5625 23.7812V20.9688C6.5625 20.1895 5.93555 19.5625 5.15625 19.5625H2.34375Z" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <h2>Pedidos Totales</h2>
-                    <p>125</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <div class="icon-wrapper">
-                    <svg width="26" height="20" viewBox="0 0 26 20" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M25.4545 1.17578C26.1799 1.9082 26.1799 3.09766 25.4545 3.83008L10.5973 18.8301C9.87189 19.5625 8.69377 19.5625 7.96832 18.8301L0.539751 11.3301C-0.185695 10.5977 -0.185695 9.4082 0.539751 8.67578C1.2652 7.94336 2.44332 7.94336 3.16877 8.67578L9.28573 14.8457L22.8313 1.17578C23.5567 0.443359 24.7348 0.443359 25.4603 1.17578H25.4545Z" />
-                    </svg>
-
-                </div>
-                <div class="card-content">
-                    <h2>Pedidos Completados</h2>
-                    <p>120</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <div class="icon-wrapper">
-                    <svg width="28" height="31" viewBox="0 0 28 31" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.78" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12.6312 9.80884C12.6512 9.54834 12.8684 9.34718 13.1297 9.34718H13.5475C13.8044 9.34718 14.0195 9.54183 14.045 9.79743L14.6667 16.0138L19.0814 18.5366C19.2372 18.6256 19.3333 18.7912 19.3333 18.9707V19.3592C19.3333 19.6889 19.0199 19.9284 18.7018 19.8416L12.3987 18.1226C12.1673 18.0595 12.0133 17.841 12.0317 17.6018L12.6312 9.80884Z" />
-                        <path opacity="0.901274" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M6.72177 0.984388C6.45766 0.66964 5.94772 0.79011 5.85239 1.18977L4.21892 8.03791C4.14124 8.36356 4.39932 8.67206 4.73357 8.65312L11.7783 8.2539C12.1892 8.23062 12.3976 7.74859 12.1331 7.43331L10.3316 5.28647C11.4965 4.88842 12.7317 4.68052 14 4.68052C20.2592 4.68052 25.3333 9.75462 25.3333 16.0139C25.3333 22.2731 20.2592 27.3472 14 27.3472C7.74077 27.3472 2.66667 22.2731 2.66667 16.0139C2.66667 14.9631 2.80896 13.9339 3.08641 12.9448L0.518845 12.2246C0.180793 13.4298 0 14.7007 0 16.0139C0 23.7458 6.26801 30.0139 14 30.0139C21.732 30.0139 28 23.7458 28 16.0139C28 8.28187 21.732 2.01385 14 2.01385C12.0551 2.01385 10.2029 2.41043 8.51974 3.12713L6.72177 0.984388Z" />
-                    </svg>
-
-                </div>
-                <div class="card-content">
-                    <h2>Pedidos Pendientes</h2>
-                    <p>5</p>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <div class="icon-wrapper">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="inherit" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3.11111 24.8889H26.4444C27.3036 24.8889 28 25.5853 28 26.4444C28 27.3036 27.3036 28 26.4444 28H1.55556C0.696446 28 0 27.3036 0 26.4444V1.55556C0 0.696446 0.696446 0 1.55556 0C2.41467 0 3.11111 0.696446 3.11111 1.55556V24.8889Z" />
-                        <path opacity="0.5"
-                            d="M8.91256 18.175C8.32498 18.8018 7.34057 18.8335 6.71382 18.2459C6.08707 17.6584 6.05531 16.674 6.64289 16.0472L12.4762 9.82498C13.0445 9.21884 13.9888 9.16627 14.6208 9.7056L19.2248 13.6344L25.2235 6.03611C25.7558 5.36181 26.734 5.24673 27.4083 5.77907C28.0826 6.31141 28.1977 7.28959 27.6653 7.96389L20.6653 16.8306C20.1186 17.5231 19.1059 17.6227 18.4347 17.05L13.7306 13.0358L8.91256 18.175Z" />
-                    </svg>
-
-                </div>
-                <div class="card-content">
-                    <h2>Ganancias Totales</h2>
-                    <p>S/. 89,000</p>
-                </div>
-            </div>
-        </section>
-
         <section id="latest-orders">
             <div class="heading">
-                <h2>Últimos pedidos</h2>
-                <a href="" class="btn">Ver todos</a>
+                <h2>Aqui ira el filtro</h2>
+                <a href="" class="btn">Añadir nuevo pedido</a>
             </div>
 
             <table>
@@ -215,61 +153,7 @@
             </table>
         </section>
 
-        <section id="most-sold">
-            <div class="heading">
-                <h2>Productos más vendidos</h2>
-                <a href="" class="btn">Ver todos</a>
-            </div>
-
-            <div class="products-wrapper">
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1/4 Pollo a la brasa</h2>
-                            <p>1/4 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 20.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1/2 Pollo a la brasa</h2>
-                            <p>1/2 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 35.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1 Pollo a la brasa</h2>
-                            <p>1 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 75.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>2 Pollos a la brasa</h2>
-                            <p>2 Pollos a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 125.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
+        <p>Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
 </body>
 
