@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/sidebar&header.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/orders.css">
     <link rel="stylesheet" href="css/orders-table.css">
 </head>
 
@@ -64,7 +64,7 @@
     </div>
 
     <header>
-        <h1>Inicio</h1>
+        <h1>Pedidos</h1>
 
         <div class="profile-info">
             <p>Bienvenido, <strong>Daniel</strong></p>
@@ -73,9 +73,40 @@
     </header>
 
     <main>
-        <section id="latest-orders">
+        <section id="orders">
             <div class="heading">
-                <h2>Aqui ira el filtro</h2>
+                <div class="filter-wrapper">
+                    <div class="icon-wrapper">
+                        <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.75 9.75C16.1348 9.75 20.5 7.73528 20.5 5.25C20.5 2.76472 16.1348 0.75 10.75 0.75C5.36522 0.75 1 2.76472 1 5.25C1 7.73528 5.36522 9.75 10.75 9.75Z"
+                                stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M1 5.25C1.00253 9.76548 4.10614 13.688 8.5 14.729V21C8.5 22.2426 9.50736 23.25 10.75 23.25C11.9926 23.25 13 22.2426 13 21V14.729C17.3939 13.688 20.4975 9.76548 20.5 5.25"
+                                stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <div>
+                        <p>Filtrar Por</p>
+                    </div>
+                    <select name="" id="fecha">
+                        <option value="">Fecha</option>
+                    </select>
+                    <select name="" id="estado">
+                        <option value="" selected>Estado</option>
+                        <option value="">Completado</option>
+                        <option value="">Pendiente</option>
+                    </select>
+                    <button>
+                        Limpiar filtros
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="inherit"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.5 3.75V0.75L5.75 4.5L9.5 8.25V5.25C11.9825 5.25 14 7.2675 14 9.75C14 12.2325 11.9825 14.25 9.5 14.25C7.0175 14.25 5 12.2325 5 9.75H3.5C3.5 13.065 6.185 15.75 9.5 15.75C12.815 15.75 15.5 13.065 15.5 9.75C15.5 6.435 12.815 3.75 9.5 3.75Z" />
+                        </svg>
+                    </button>
+                </div>
                 <a href="" class="btn">Añadir nuevo pedido</a>
             </div>
 
@@ -151,9 +182,29 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="pagination">
+                <p>Página 1 de 2</p>
+                <div class="arrows-wrapper">
+                    <div class="arrow-prev disabled">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                        </svg>
+                    </div>
+                    <div class="arrow-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <p>Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
+        <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
 </body>
 

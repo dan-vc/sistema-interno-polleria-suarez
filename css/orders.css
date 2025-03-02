@@ -1,0 +1,123 @@
+section {
+    width: 100%;
+    max-width: 1300px;
+}
+
+#orders {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+
+    & .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+    }
+}
+
+.filter-wrapper {
+    display: flex;
+    border-radius: var(--radius-s);
+    background: var(--background-light);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+
+    &>div,
+    &>select,
+    &>button {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 1.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &>*:not(:last-child) {
+        border-right: 1px solid var(--border-light);
+    }
+
+    & p {
+        margin-block-end: 0;
+        margin-block-start: 0;
+    }
+
+    & select {
+        background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+        background-position: calc(100% - 1rem) center;
+        padding-right: 2.5rem;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    & button {
+        color: var(--red);
+        fill: var(--red);
+        display: flex;
+        gap: .5rem;
+    }
+
+    & select,
+    & button {
+        cursor: pointer;
+        transition: all ease .3s;
+    }
+
+    & select:hover {
+        backdrop-filter: brightness(.95);
+    }
+
+    & button:hover {
+        background: var(--red);
+        color: var(--light);
+        fill: var(--light);
+    }
+
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    & .arrows-wrapper {
+        display: flex;
+        border-radius: var(--radius-s);
+        background: var(--background-light);
+        border: 1px solid var(--border-light);
+
+        &> :not(:last-child) {
+            border-right: 1px solid var(--border-light);
+        }
+
+        &>* {
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            transition: all ease .3s;
+        }
+
+        &>*:hover {
+            backdrop-filter: brightness(.95);;
+        }
+
+        &>*.disabled{
+            fill: var(--gray);
+            pointer-events: none;
+        }
+
+        & svg {
+            height: 1rem;
+        }
+    }
+}

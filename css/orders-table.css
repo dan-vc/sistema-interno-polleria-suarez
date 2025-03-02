@@ -47,3 +47,34 @@ table {
         }
     }
 }
+
+/* @media screen and (max-width: 1100px) {
+    table {
+        & th,
+        & td {
+            padding: 1rem;
+        }
+    }
+    
+    
+}
+
+@media screen and (max-width: 992px) {
+    table {
+        th:nth-child(3),
+        td:nth-child(3),
+        th:nth-child(4),
+        td:nth-child(4) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        th:nth-child(2),
+        td:nth-child(2){
+            display: none;
+        }
+    }
+} */
