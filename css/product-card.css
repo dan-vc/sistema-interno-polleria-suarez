@@ -73,7 +73,7 @@
     .product-card img {
         width: 80px;
 
-        top: 50%;
+        top: 50% !important;
         left: 0;
         transform: translateX(-50%) translateY(-50%);
     }
@@ -102,5 +102,12 @@
         font-size: .85rem;
     }
 
+    
+}
+
+@media screen and (max-width: 600px) {
+    .products-wrapper{
+        justify-content: center;
+    }
     
 }

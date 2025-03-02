@@ -48,18 +48,16 @@ table {
     }
 }
 
-/* @media screen and (max-width: 1100px) {
+ @media screen and (max-width: 992px) {
     table {
         & th,
         & td {
             padding: 1rem;
         }
     }
-    
-    
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     table {
         th:nth-child(3),
         td:nth-child(3),
@@ -70,11 +68,11 @@ table {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     table {
         th:nth-child(2),
         td:nth-child(2){
             display: none;
         }
     }
-} */
+}

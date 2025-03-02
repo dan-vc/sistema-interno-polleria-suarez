@@ -4,6 +4,7 @@
     left: 0;
     height: 100%;
     width: 250px;
+    z-index: 999;
     background-color: var(--light);
     border-right: 1px solid var(--border-light);
     padding: 1rem 0;
@@ -76,16 +77,59 @@ header {
     transition: all 0.5s ease;
 }
 
-header h1{
+header h1 {
     font-size: 1.75rem;
 }
 
-header .profile-info{
+header .profile-info {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-header .profile-info img{
+header .profile-info img {
     border-radius: 99rem;
+}
+
+#toggle-sidebar {
+    display: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #toggle-sidebar {
+        display: block;
+        background: none;
+        outline: none;
+        border: none;
+
+        & svg {
+            height: 30px;
+            width: auto;
+        }
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        overflow: hidden;
+
+        &.open {
+            transform: translateX(0%);
+        }
+    }
+
+    body {
+        margin-left: 0;
+    }
+
+    header {
+
+        & h1 {
+            font-size: 1.5rem;
+        }
+
+        & .profile-info p {
+            display: none;
+        }
+    }
 }

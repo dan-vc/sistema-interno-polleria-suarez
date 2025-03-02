@@ -85,7 +85,9 @@ section {
 
     & .heading {
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 1rem;
 
         & h2 {
             font-size: 1.5rem;
@@ -96,4 +98,31 @@ section {
 
 #most-sold {
     gap: 2.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    #info-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+
+        & .info-card {
+            padding: 1rem;
+
+            & .icon-wrapper {
+                display: none;
+            }
+
+        }
+    }
+
+    #latest-orders,
+    #most-sold {
+        & .heading {
+            & h2 {
+                font-size: 1.25rem;
+            }
+        }
+    }
 }

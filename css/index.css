@@ -77,6 +77,7 @@ a {
 
 .btn {
     background: var(--secondary);
+    min-width: max-content;
     color: var(--light);
     border: none;
     text-decoration: none;
@@ -113,3 +114,14 @@ main {
     color: var(--gray);
 }
 
+@media screen and (max-width: 600px) {
+    main {
+        padding: 2rem 1rem 1rem 1rem;
+        gap: 2rem;
+    }
+
+    .copyright{
+        font-size: .75rem;
+        margin: auto;
+    }
+}
