@@ -98,6 +98,10 @@ a {
     background: var(--red);
 }
 
+.btn-green{
+    background: var(--green);
+}
+
 main {
     background: var(--semi-light);
     width: 100%;
