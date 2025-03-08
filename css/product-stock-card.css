@@ -1,12 +1,12 @@
-.products-wrapper{
+.products-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     gap: 2rem;
 }
 
 .product-card__wrapper {
     padding-top: 85px;
+    width: 100%;
     max-width: 250px;
 }
 
@@ -15,7 +15,7 @@
     color: var(--terciary);
     border-radius: 24px;
     display: grid;
-    grid-template-rows: 2fr 3fr;
+    grid-template-rows: 2fr 3fr auto;
     position: relative;
 
     img {
@@ -23,7 +23,7 @@
         aspect-ratio: 1;
         border-radius: 999rem;
         object-fit: cover;
-    
+
         position: absolute;
         top: 0;
         left: 50%;
@@ -55,13 +55,38 @@
             color: var(--secondary);
         }
     }
+
+    .product-stock {
+        padding: 1rem;
+        grid-row: 3/4;
+        margin: auto;
+        
+        h3 {
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .icon {
+                background: #F9F8F6;
+                padding: .5rem;
+                border-radius: 99rem;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
     .product-card__wrapper {
         padding-top: 0;
         padding-left: 40px;
-        max-width: 300px;
+        max-width: 350px;
     }
 
     .product-card {
@@ -72,7 +97,7 @@
 
         img {
             width: 80px;
-    
+
             top: 50% !important;
             left: 0;
             transform: translateX(-50%) translateY(-50%);
@@ -101,12 +126,24 @@
                 font-size: .85rem;
             }
         }
+
+        .product-stock {
+            padding: 0;
+            padding-bottom: 1rem;
+            padding-left: calc(40px + 1.5rem);
+            margin: unset;
+    
+            h3 {
+                font-size: .75rem;
+                text-align: left;
+            }
+        }
     }
 }
 
 @media screen and (max-width: 600px) {
-    .products-wrapper{
+    .products-wrapper {
         justify-content: center;
     }
-    
+
 }

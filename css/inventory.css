@@ -1,0 +1,17 @@
+section {
+    width: 100%;
+    max-width: 1300px;
+}
+
+#inventory {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
+
+    & .heading {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+}
