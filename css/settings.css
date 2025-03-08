@@ -1,0 +1,108 @@
+section {
+    width: 100%;
+    max-width: 1300px;
+}
+
+input {
+    padding: .75rem 1rem;
+}
+
+label{
+    font-weight: 600;
+}
+
+#editProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    background: var(--light);
+    padding: 2rem;
+    border-radius: var(--radius-l);
+
+    & .heading {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            font-family: 'Barlow';
+        }
+    }
+}
+
+.form-fields{
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &.pfp{
+        grid-row: 1/4;
+        width: 130px;
+        height: 130px;
+        position: relative;
+
+        label{
+            position: absolute;
+            right: 0;
+            bottom: .5rem;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1;
+            background: var(--blue);
+            color: var(--light);
+            border-radius: 99rem;
+            cursor: pointer;
+            transition: all ease .3s;
+        }
+
+        label:hover{
+            bottom: .7rem;
+        }
+
+        input{
+            display: none;
+        }
+    }
+}
+
+#submitBtn{
+    display: block;
+    margin: 2rem 0 0 auto;
+}
+
+@media screen and (max-width:768px) {
+    .form-fields{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .form-group{
+        &.pfp{
+            grid-row: auto;
+            grid-column: 1/-1;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .form-fields{
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-group{
+        &.pfp{
+            grid-row: auto;
+            grid-column: auto;
+        }
+    }
+}

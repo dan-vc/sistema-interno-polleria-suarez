@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-pe">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollería Suarez - Inicio</title>
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/sidebar&header.css">
+    <link rel="stylesheet" href="/css/settings.css">
+</head>
+
+<body>
+    <div class="sidebar" data-page="settings"></div>
+
+    <header>
+        <h1>Ajustes</h1>
+
+        <div class="profile-info">
+            <p>Bienvenido, <strong>Daniel</strong></p>
+            <img src="/img/user-pfp.png" alt="Foto de perfil">
+        </div>
+
+        <button id="toggle-sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+            </svg>
+        </button>
+    </header>
+
+    <main>
+        <section id="editProfile">
+            <div class="heading">
+                <h2>Editar Perfil</h2>
+            </div>
+            <form action="">
+                <div class="form-fields">
+                    <div class="form-group pfp">
+                        <img src="/img/user-pfp.png" id="imagenMostrada" alt="Profile Picture">
+                        <label for="pfp">
+                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_190_9213)">
+                                    <path
+                                        d="M15.1127 4.16318L13.7672 5.51376C13.6301 5.65146 13.4083 5.65146 13.2711 5.51376L10.0315 2.26181C9.89436 2.12412 9.89436 1.90146 10.0315 1.76376L11.377 0.413178C11.9227 -0.134674 12.81 -0.134674 13.3587 0.413178L15.1127 2.17392C15.6614 2.72177 15.6614 3.6124 15.1127 4.16318ZM8.87579 2.92392L1.21174 10.6173L0.593014 14.1768C0.508377 14.6573 0.925726 15.0733 1.40436 14.9913L4.95037 14.3673L12.6144 6.67392C12.7516 6.53622 12.7516 6.31357 12.6144 6.17587L9.37486 2.92392C9.23477 2.78622 9.01296 2.78622 8.87579 2.92392ZM4.20323 9.9581C4.04271 9.79697 4.04271 9.53915 4.20323 9.37802L8.69776 4.8663C8.85828 4.70517 9.11511 4.70517 9.27563 4.8663C9.43615 5.02744 9.43615 5.28525 9.27563 5.44638L4.7811 9.9581C4.62058 10.1192 4.36375 10.1192 4.20323 9.9581ZM3.14964 12.422H4.55054V13.4854L2.66809 13.8165L1.76042 12.9054L2.09022 11.0157H3.14964V12.422Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_190_9213">
+                                        <rect width="14.9429" height="15" fill="white"
+                                            transform="translate(0.581055)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </label>
+                        <input type="file" name="pfp" id="pfp" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="name">Nombre:</label>
+                        </div>
+                        <input type="text" name="name" placeholder="Tu nombre" value="Daryl" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="last_name">Apellido:</label>
+                        </div>
+                        <input type="text" name="last_name" placeholder="Tu apellido" value="Jhonson" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="user_name">Usuario:</label>
+                        </div>
+                        <input type="text" name="user_name" placeholder="Tu usuario" value="Dary" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="email">Correo electrónico:</label>
+                        </div>
+                        <input type="email" name="email" placeholder="Tu correo electrónico" value="Daryl@gmail.com"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="password">Contraseña:</label>
+                        </div>
+                        <input type="password" name="password" placeholder="****" value="123456" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="password">Confirmar Contraseña:</label>
+                        </div>
+                        <input type="password" placeholder="****" value="123456" required>
+                    </div>
+                </div>
+                <input type="submit" id="submitBtn" value="Guardar" class="btn">
+            </form>
+        </section>
+
+        <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
+    </main>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/sidebarLoader.js"></script>
+</body>
+
+</html>

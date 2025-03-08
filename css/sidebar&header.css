@@ -89,6 +89,7 @@ header .profile-info {
 
 header .profile-info img {
     border-radius: 99rem;
+    width: 60px;
 }
 
 #toggle-sidebar {
