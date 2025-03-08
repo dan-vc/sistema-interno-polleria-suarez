@@ -1,0 +1,26 @@
+.chart-container{
+    width: 100%;
+    max-width: 1120px;
+    position: relative;
+}
+
+.chart-canvas{
+    display: unset !important;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#incomeGraphMobile{
+    display: none !important;
+}
+
+@media screen and (max-width:768px) {    
+    #incomeGraphMobile{
+        display: unset !important;
+    }
+
+    #incomeGraphDesktop{
+        display: none !important;
+    }
+}
