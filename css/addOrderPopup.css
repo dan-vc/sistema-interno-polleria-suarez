@@ -1,0 +1,13 @@
+input{
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    width: 100%;
+    max-width: 24rem;
+}
+
+@media screen and (max-width:500px) {
+    input{
+        margin: 0;
+        margin-top: .5rem;
+    }
+}
