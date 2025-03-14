@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/product-stock-card.css">
     <link rel="stylesheet" href="css/inventory.css">
     <link rel="stylesheet" href="css/popup.css">
-    <link rel="stylesheet" href="css/orderDetailPopup.css">
+    <link rel="stylesheet" href="css/addProductPopup.css">
 </head>
 
 <body>
@@ -209,6 +209,53 @@
 
         <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
+
+    <!-- Popup flotante -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button id="closePopup" class="close-btn">✖</button>
+
+            <header class="heading">
+                <h2>Añadir Nuevo Producto</h2>
+            </header>
+
+            <form action="">
+                <div class="form-fields">
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="image">Imagen:</label>
+                        </div>
+                        <label for="image" id="image-box">Subir Imagen del Producto</label>
+                        <input type="file" id="image" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="last_name">Producto:</label>
+                        </div>
+                        <input type="text" id="last_name" placeholder="Tu apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="description">Descripción:</label>
+                        </div>
+                        <textarea id="description" placeholder="Descripción del Producto" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group__heading">
+                            <label for="price">Precio:</label>
+                        </div>
+                        <input type="number" id="price" placeholder="Precio del Producto"
+                            required>
+                    </div>
+                </div>
+                <input type="submit" id="submitBtn" value="Guardar" class="btn">
+            </form>
+
+        </div>
+    </div>
 
     <script src="/js/sidebar.js"></script>
     <script src="/js/sidebarLoader.js"></script>
