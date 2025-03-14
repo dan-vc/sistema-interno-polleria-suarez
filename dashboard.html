@@ -23,7 +23,7 @@
         <h1>Inicio</h1>
 
         <div class="profile-info">
-            <p>Bienvenido, <strong>Daniel</strong></p>
+            <p>Bienvenido, <strong id="user-name">Daniel</strong></p>
             <img src="/img/user-pfp.png" alt="Foto de perfil">
         </div>
 
@@ -113,67 +113,8 @@
                     <th>Total</th>
                     <th>Estado</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a class="link" id="openPopup">00001</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00002</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-pending">Pendiente</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00003</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-pending">Pendiente</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00004</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00005</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
+                <tbody id="orders-table-body" data-offset="0" data-limit="5">
+
                 </tbody>
             </table>
         </section>
@@ -235,8 +176,8 @@
         <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
 
-    <!-- Popup flotante -->
-    <div id="popup" class="popup">
+    <!-- Order Detail Popup -->
+    <div id="orderDetailPopup" class="popup">
         <div class="popup-content">
             <button id="closePopup" class="close-btn">✖</button>
             <div class="heading">
@@ -244,8 +185,8 @@
                 <p>Fecha: <span id="OrderDate">14/02/2025</span></p>
             </div>
             <div class="customer-info">
-                <p>Cliente: <span>Daryl Jhonson</span></p>
-                <p>Dirección: <span>Av. Alisos 345</span></p>
+                <p>Cliente: <span id="CustomerName">Daryl Jhonson</span></p>
+                <p>Dirección: <span id="CustomerAddress">Av. Alisos 345</span></p>
             </div>
             <table class="order-detail-table">
                 <thead>
@@ -293,6 +234,8 @@
     </div>
 
 
+    <script type="module" src="/js/dashboard.js"></script>
+    <script type="module" src="/js/renderOrders.js"></script>
     <script src="/js/sidebar.js"></script>
     <script src="/js/sidebarLoader.js"></script>
     <script src="/js/popup.js"></script>

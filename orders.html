@@ -80,7 +80,7 @@
                             d="M9.5 3.75V0.75L5.75 4.5L9.5 8.25V5.25C11.9825 5.25 14 7.2675 14 9.75C14 12.2325 11.9825 14.25 9.5 14.25C7.0175 14.25 5 12.2325 5 9.75H3.5C3.5 13.065 6.185 15.75 9.5 15.75C12.815 15.75 15.5 13.065 15.5 9.75C15.5 6.435 12.815 3.75 9.5 3.75Z" />
                     </svg>
                 </button>
-                <a id="openPopup" class="btn">Añadir nuevo pedido</a>
+                <a class="btn openPopup" data-target="addOrderPopup">Añadir nuevo pedido</a>
             </div>
 
             <table class="orders-table">
@@ -92,81 +92,22 @@
                     <th>Total</th>
                     <th>Estado</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a class="link">00001</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00002</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-pending">Pendiente</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00003</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-pending">Pendiente</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00004</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="link">00005</a>
-                        </td>
-                        <td>Daryl Jhonson</td>
-                        <td>Av. Alisos 345</td>
-                        <td>14/02/2025</td>
-                        <td>S/. 125.00</td>
-                        <td>
-                            <div class="tag tag-success">Completado</div>
-                        </td>
-                    </tr>
+                <tbody id="orders-table-body" data-offset="0" data-limit="10">
+
                 </tbody>
             </table>
 
             <div class="pagination">
-                <p>Página 1 de 2</p>
+                <p>Página <span id="actualPage">1</span> de <span id="totalPages"></span></p>
                 <div class="arrows-wrapper">
-                    <div class="arrow-prev disabled">
+                    <div id="prev-page" class="arrow-prev disabled">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                                 d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
                         </svg>
                     </div>
-                    <div class="arrow-prev">
+                    <div id="next-page" class="arrow-next">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
@@ -180,8 +121,8 @@
         <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
 
-    <!-- Popup flotante -->
-    <div id="popup" class="popup">
+    <!-- Add Order Popup -->
+    <div id="addOrderPopup" class="popup">
         <div class="popup-content">
             <button id="closePopup" class="close-btn">✖</button>
             
@@ -263,6 +204,65 @@
         </div>
     </div>
 
+    <!-- Order Detail Popup -->
+    <div id="orderDetailPopup" class="popup">
+        <div class="popup-content">
+            <button id="closePopup" class="close-btn">✖</button>
+            <div class="heading">
+                <p>ID del pedido: <span id="OrderID">00001</span></p>
+                <p>Fecha: <span id="OrderDate">14/02/2025</span></p>
+            </div>
+            <div class="customer-info">
+                <p>Cliente: <span id="CustomerName">Daryl Jhonson</span></p>
+                <p>Dirección: <span id="CustomerAddress">Av. Alisos 345</span></p>
+            </div>
+            <table class="order-detail-table">
+                <thead>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>P. Unitario</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>00001</td>
+                        <td>1/4 Pollo a la brasa</td>
+                        <td>
+                            <div class="quantity">
+                                <div class="icon minus">
+                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5.71118" y="8.25" width="9" height="1.5" rx="0.75" fill="#222222" />
+                                    </svg>
+                                </div>
+                                <p>02</p>
+                                <div class="icon plus">
+                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5.28857" y="8.25" width="9" height="1.5" rx="0.75" fill="#222222" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.5386 5.0625V12.9375C10.5386 13.2482 10.2028 13.5 9.78857 13.5C9.37436 13.5 9.03857 13.2482 9.03857 12.9375V5.0625C9.03857 4.75184 9.37436 4.5 9.78857 4.5C10.2028 4.5 10.5386 4.75184 10.5386 5.0625Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                        <td>S/. 20.00</td>
+                        <td>S/. 125.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="order-total">Total = S/. <span id="OrderTotal">80.00</span></p>
+            <div class="order-options">
+                <button class="btn btn-green">Completar Pedido</button>
+                <button id="PrintOrderBtn" class="btn">Imprimir</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/renderOrders.js"></script>
+    <script type="module" src="/js/orders.js"></script>
     <script src="/js/sidebar.js"></script>
     <script src="/js/sidebarLoader.js"></script>
     <script src="/js/popup.js"></script>
