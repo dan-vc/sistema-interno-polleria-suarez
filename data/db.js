@@ -134,26 +134,37 @@ export const products = [
     {
         "id": "00001",
         "name": "1/4 Pollo a la brasa",
-        "img": "/img/product-desktop.png",
+        "img": "/img/product-1.png",
         "description": "1/4 Pollo a la brasa + papas fritas + ensalada + cremas",
-        "price": "20.00"
+        "price": 20,
+        "stock": 75
     },
     {
         "name": "1/2 Pollo a la brasa",
-        "img": "/img/product-desktop.png",
+        "img": "/img/product-2.jpeg",
         "description": "1/2 Pollo a la brasa + papas fritas + ensalada + cremas",
-        "price": "35.00"
+        "price": 35,
+        "stock": 52
     },
     {
         "name": "1 Pollo a la brasa",
-        "img": "/img/product-desktop.png",
+        "img": "/img/product-3.png",
         "description": "1 Pollo a la brasa + papas fritas + ensalada + cremas",
-        "price": "75.00"
+        "price": 75,
+        "stock": 30
     },
     {
         "name": "2 Pollos a la brasa",
-        "img": "/img/product-desktop.png",
+        "img": "/img/product-4.png",
         "description": "2 Pollos a la brasa + papas fritas + ensalada + cremas",
-        "price": "120.00"
+        "price": 120,
+        "stock": 15
+    },
+    {
+        "name": "Parrillera Suarez",
+        "img": "/img/product-5.jpg",
+        "description": "1/4 Pollo a la brasa + 2 anticuchos + ensalada + cremas",
+        "price": 25,
+        "stock": 50
     }
 ]

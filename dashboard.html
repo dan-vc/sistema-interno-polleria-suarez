@@ -125,51 +125,8 @@
                 <a href="inventory.html" class="btn">Ver todos</a>
             </div>
 
-            <div class="products-wrapper">
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1/4 Pollo a la brasa</h2>
-                            <p>1/4 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 20.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1/2 Pollo a la brasa</h2>
-                            <p>1/2 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 35.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>1 Pollo a la brasa</h2>
-                            <p>1 Pollo a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 75.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card__wrapper">
-                    <div class="product-card">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto">
-                        <img src="/img/product-desktop.png" alt="Imagen del Producto Difuminada">
-                        <div class="product-info">
-                            <h2>2 Pollos a la brasa</h2>
-                            <p>2 Pollos a la brasa + papas fritas + ensalada + cremas</p>
-                            <span class="price">S/. 125.00</span>
-                        </div>
-                    </div>
-                </div>
+            <div id="render-products" data-add-btn="false" data-offset="0" data-limit="4" class="products-wrapper">
+                
             </div>
         </section>
 
@@ -236,6 +193,7 @@
 
     <script type="module" src="/js/dashboard.js"></script>
     <script type="module" src="/js/renderOrders.js"></script>
+    <script type="module" src="/js/renderProducts.js"></script>
     <script src="/js/sidebar.js"></script>
     <script src="/js/sidebarLoader.js"></script>
     <script src="/js/popup.js"></script>
