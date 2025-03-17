@@ -70,6 +70,21 @@
 
 .order-options{
     margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+#PrintOrderBtn{
+    cursor: pointer;
+    padding: .7rem;
+    background: var(--background-light);
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-s);
+    transition: all ease .3s;
+
+    &:hover{
+        scale: 1.05;
+    }
 }
 
 @media screen and (max-width: 992px) {
