@@ -6,6 +6,14 @@ export const users = [
         "user-name": "Dan",
         "email": "danedo20472@gmail.com",
         "password": "123456"
+    },
+    {
+        "id": "00002",
+        "name": "Juanito",
+        "last-name": "Gutierrez",
+        "user-name": "Juan",
+        "email": "admin@suarez.pe",
+        "password": "123456"
     }
 ]
 
