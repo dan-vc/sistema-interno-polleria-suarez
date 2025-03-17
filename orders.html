@@ -18,16 +18,16 @@
 </head>
 
 <body>
-    <div class="sidebar" data-page="orders">
-    </div>
+    <aside class="sidebar" data-page="orders">
+    </aside>
 
     <header>
         <h1>Pedidos</h1>
 
-        <div class="profile-info">
+        <article class="profile-info">
             <p>Bienvenido, <strong>Daniel</strong></p>
             <img src="img/user-pfp.png" alt="Foto de perfil">
-        </div>
+        </article>
 
         <button id="toggle-sidebar">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +40,10 @@
 
     <main>
         <section id="orders">
-            <div class="heading">
+            <header class="heading">
                 <div class="filter-wrapper">
                     <div class="icon-wrapper">
+                        
                         <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M10.75 9.75C16.1348 9.75 20.5 7.73528 20.5 5.25C20.5 2.76472 16.1348 0.75 10.75 0.75C5.36522 0.75 1 2.76472 1 5.25C1 7.73528 5.36522 9.75 10.75 9.75Z"
@@ -56,15 +57,15 @@
                     <div>
                         <p>Filtrar Por</p>
                     </div>
-                    <select name="" id="fecha">
+                    <select id="fecha">
                         <option value="">Fecha</option>
                     </select>
-                    <select name="" id="estado">
+                    <select id="filter-status">
                         <option value="" selected>Estado</option>
-                        <option value="">Completado</option>
-                        <option value="">Pendiente</option>
+                        <option value="completado">Completado</option>
+                        <option value="pendiente">Pendiente</option>
                     </select>
-                    <button id="reset-filter">
+                    <button id="filter-reset">
                         Limpiar filtros
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="inherit"
                             xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +82,7 @@
                     </svg>
                 </button>
                 <a class="btn openPopup" data-target="addOrderPopup">Añadir nuevo pedido</a>
-            </div>
+            </header>
 
             <table class="orders-table">
                 <thead>
@@ -97,7 +98,7 @@
                 </tbody>
             </table>
 
-            <div class="pagination">
+            <article class="pagination">
                 <p>Página <span id="actualPage">1</span> de <span id="totalPages"></span></p>
                 <div class="arrows-wrapper">
                     <div id="prev-page" class="arrow-prev disabled">
@@ -115,14 +116,14 @@
                         </svg>
                     </div>
                 </div>
-            </div>
+            </article>
         </section>
 
         <p class="copyright">Pollos a la Brasa Suarez © 2025 Todos los derechos reservados</p>
     </main>
 
     <!-- Add Order Popup -->
-    <div id="addOrderPopup" class="popup">
+    <aside id="addOrderPopup" class="popup">
         <div class="popup-content">
             <button id="closePopup" class="close-btn">✖</button>
 
@@ -183,10 +184,10 @@
 
             </div>
         </div>
-    </div>
+    </aside>
 
     <!-- Order Detail Popup -->
-    <div id="orderDetailPopup" class="popup">
+    <aside id="orderDetailPopup" class="popup">
         <div class="popup-content">
             <button id="closePopup" class="close-btn">✖</button>
             <div class="heading">
@@ -246,7 +247,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </aside>
 
     <script type="module" src="/js/renderOrders.js"></script>
     <script type="module" src="/js/renderProducts.js"></script>

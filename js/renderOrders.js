@@ -6,34 +6,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPagesHTML = document.getElementById('totalPages');
     const prevPage = document.getElementById('prev-page');
     const nextPage = document.getElementById('next-page');
-    
-    renderOrders();
-    
-    if (nextPage && prevPage && totalPagesHTML) {
-        const totalPages = Math.ceil(orders.length / ordersTable.dataset.limit)
-        totalPagesHTML.innerHTML = totalPages;
+    const filterStatus = document.getElementById('filter-status');
+    const filterReset = document.getElementById('filter-reset');
 
+    renderOrders();
+
+    if (nextPage && prevPage && totalPagesHTML) {
         prevPage.addEventListener('click', () => {
             ordersTable.dataset.offset -= 10
             ordersTable.dataset.limit -= 10
             actualPageHTML.textContent -= 1
             renderOrders();
-            updatePagination();
         })
         nextPage.addEventListener('click', () => {
             ordersTable.dataset.offset = parseInt(ordersTable.dataset.offset) + 10
             ordersTable.dataset.limit = parseInt(ordersTable.dataset.limit) + 10
             actualPageHTML.textContent = parseInt(actualPageHTML.textContent) + 1
             renderOrders();
-            updatePagination();
         })
     }
-    
-    function renderOrders() {
+
+
+    if (filterStatus && filterReset) {
+        filterStatus.addEventListener('change', () => {
+            ordersTable.dataset.offset = "0"; // Reiniciar a la primera página al cambiar filtro
+            actualPageHTML.textContent = "1";
+            renderOrders(filterStatus.value)
+        })
+
+        filterReset.addEventListener('click', () => {
+            filterStatus.value = ""; // Resetear filtro
+            ordersTable.dataset.offset = "0"; // Volver a la primera página
+            actualPageHTML.textContent = "1";
+            renderOrders();
+        });
+    }
+
+    function renderOrders(status = "") {
         const offset = ordersTable.dataset.offset;
         const limit = ordersTable.dataset.limit;
 
-        const ordersUpdated = orders.slice(offset, limit);
+        let ordersUpdated = orders;
+
+        if (status) {
+            ordersUpdated = ordersUpdated.filter(order => order.status.toLowerCase() === status)
+        }
+
+        if (nextPage && prevPage && totalPagesHTML) {
+            const totalPages = Math.ceil(ordersUpdated.length / limit)
+            totalPagesHTML.innerHTML = totalPages;
+            updatePagination(ordersUpdated.length);
+        }
+
+        ordersUpdated = ordersUpdated.slice(offset, limit);
+
 
         let HTMLTemplate = "";
 
@@ -56,36 +82,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ordersTable.innerHTML = HTMLTemplate;
 
-        // Delegación de eventos para los enlaces con clase "openPopup"
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('openPopup')) {
-                const orderId = event.target.getAttribute('data-id');
-                const popupContent = document.querySelector('#orderDetailPopup .popup-content');
-
-                const order = orders.find(order => order.id === orderId)
-
-                popupContent.querySelector('#OrderID').innerHTML = order.id;
-                popupContent.querySelector('#OrderDate').innerHTML = order.date;
-                popupContent.querySelector('#CustomerName').innerHTML = order.customer;
-                popupContent.querySelector('#CustomerAddress').innerHTML = order.address;
-                popupContent.querySelector('#OrderTotal').innerHTML = order.total.toFixed(2);
-
-            }
-        });
-
     }
 
-    function updatePagination() {
+    function updatePagination(totalOrdes) {
         if (ordersTable.dataset.offset == 0) {
             prevPage.classList.add('disabled')
         } else {
             prevPage.classList.remove('disabled')
         }
-        if (ordersTable.dataset.limit >= orders.length) {
+        if (ordersTable.dataset.limit >= totalOrdes) {
             nextPage.classList.add('disabled')
         } else {
             nextPage.classList.remove('disabled')
         }
     }
+
+
+    // Delegación de eventos para los enlaces con clase "openPopup"
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('openPopup')) {
+            const orderId = event.target.getAttribute('data-id');
+            const popupContent = document.querySelector('#orderDetailPopup .popup-content');
+
+            const order = orders.find(order => order.id === orderId)
+
+            popupContent.querySelector('#OrderID').innerHTML = order.id;
+            popupContent.querySelector('#OrderDate').innerHTML = order.date;
+            popupContent.querySelector('#CustomerName').innerHTML = order.customer;
+            popupContent.querySelector('#CustomerAddress').innerHTML = order.address;
+            popupContent.querySelector('#OrderTotal').innerHTML = order.total.toFixed(2);
+
+        }
+    });
 })
 
