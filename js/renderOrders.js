@@ -1,4 +1,4 @@
-import { orders } from '/data/db.js';
+import { orders, products } from '/data/db.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     /* Obtener los elementos HTML */
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const limit = ordersTable.dataset.limit;
 
         let ordersUpdated = orders; // Obtener todos los pedidos
-        
+
         /* Si existe el filtro de estado */
         if (status) {
             /* Actualizar los pedidos con el filtro */
@@ -144,6 +144,44 @@ document.addEventListener('DOMContentLoaded', () => {
             popupContent.querySelector('#CustomerName').innerHTML = order.customer;
             popupContent.querySelector('#CustomerAddress').innerHTML = order.address;
             popupContent.querySelector('#OrderTotal').innerHTML = order.total.toFixed(2);
+
+            let HTMLTemplate = "";
+            const orderProducts = products.filter(product => order.products.includes(product.id))
+
+            console.log(orderProducts)
+    
+            orderProducts.forEach(product => {
+                HTMLTemplate += `
+                    <tr>
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>
+                            <div class="quantity">
+                                <div class="icon minus">
+                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5.71118" y="8.25" width="9" height="1.5" rx="0.75" fill="#222222" />
+                                    </svg>
+                                </div>
+                                <p>01</p>
+                                <div class="icon plus">
+                                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5.28857" y="8.25" width="9" height="1.5" rx="0.75" fill="#222222" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.5386 5.0625V12.9375C10.5386 13.2482 10.2028 13.5 9.78857 13.5C9.37436 13.5 9.03857 13.2482 9.03857 12.9375V5.0625C9.03857 4.75184 9.37436 4.5 9.78857 4.5C10.2028 4.5 10.5386 4.75184 10.5386 5.0625Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                        <td>S/. ${product.price.toFixed(2)}</td>
+                        <td>S/. ${product.price.toFixed(2)}</td>
+                    </tr>
+                `
+            })
+
+            popupContent.querySelector('#render-order-products').innerHTML = HTMLTemplate;
 
         }
     });

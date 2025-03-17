@@ -16,7 +16,7 @@ export const orders = [
         "address": "Lince 123",
         "date": "13/02/2025",
         "products": ['00002'],
-        "total": 25,
+        "total": 35,
         "status": "Completado"
     },
     {
@@ -25,7 +25,7 @@ export const orders = [
         "address": "Cerro 329",
         "date": "13/02/2025",
         "products": ['00004'],
-        "total": 25,
+        "total": 120,
         "status": "Pendiente"
     },
     {
@@ -34,7 +34,7 @@ export const orders = [
         "address": "Habich 777",
         "date": "13/02/2025",
         "products": ['00004'],
-        "total": 25,
+        "total": 120,
         "status": "Completado"
     },
     {
@@ -52,7 +52,7 @@ export const orders = [
         "address": "Calle Flores 123",
         "date": "15/02/2025",
         "products": ['00002', '00003'],
-        "total": 35.50,
+        "total": 110,
         "status": "Pendiente"
     },
     {
@@ -61,7 +61,7 @@ export const orders = [
         "address": "Av. Libertad 567",
         "date": "16/02/2025",
         "products": ['00004'],
-        "total": 15,
+        "total": 120,
         "status": "Pendiente"
     },
     {
@@ -69,8 +69,8 @@ export const orders = [
         "customer": "Laura Perez",
         "address": "Calle Luna 789",
         "date": "17/02/2025",
-        "products": ['00005', '00006'],
-        "total": 45.75,
+        "products": ['00004', '00005'],
+        "total": 145,
         "status": "Completado"
     },
     {
@@ -78,8 +78,8 @@ export const orders = [
         "customer": "Juan Rodriguez",
         "address": "Av. Sol 101",
         "date": "18/02/2025",
-        "products": ['00007'],
-        "total": 30,
+        "products": ['00005'],
+        "total": 25,
         "status": "Pendiente"
     },
     {
@@ -87,8 +87,8 @@ export const orders = [
         "customer": "Ana Lopez",
         "address": "Calle Estrella 202",
         "date": "19/02/2025",
-        "products": ['00008', '00009'],
-        "total": 60,
+        "products": ['00005'],
+        "total": 25,
         "status": "Pendiente"
     },
     {
@@ -96,8 +96,8 @@ export const orders = [
         "customer": "Pedro Sanchez",
         "address": "Av. Rio 303",
         "date": "20/02/2025",
-        "products": ['00010'],
-        "total": 25,
+        "products": ['00001'],
+        "total": 20,
         "status": "Completado"
     },
     {
@@ -105,8 +105,8 @@ export const orders = [
         "customer": "Sofia Ramirez",
         "address": "Calle Montaña 404",
         "date": "21/02/2025",
-        "products": ['00011', '00012'],
-        "total": 50,
+        "products": ['00001', '00002'],
+        "total": 55,
         "status": "Pendiente"
     },
     {
@@ -114,8 +114,8 @@ export const orders = [
         "customer": "Miguel Torres",
         "address": "Av. Bosque 505",
         "date": "22/02/2025",
-        "products": ['00013'],
-        "total": 40,
+        "products": ['00003'],
+        "total": 75,
         "status": "Pendiente"
     },
     {
@@ -123,8 +123,8 @@ export const orders = [
         "customer": "Elena Castro",
         "address": "Calle Mar 606",
         "date": "23/02/2025",
-        "products": ['00014', '00015'],
-        "total": 55,
+        "products": ['00004'],
+        "total": 120,
         "status": "Completado"
     }
 ];
@@ -140,6 +140,7 @@ export const products = [
         "stock": 75
     },
     {
+        "id": "00002",
         "name": "1/2 Pollo a la brasa",
         "img": "/img/product-2.jpeg",
         "description": "1/2 Pollo a la brasa + papas fritas + ensalada + cremas",
@@ -147,6 +148,7 @@ export const products = [
         "stock": 52
     },
     {
+        "id": "00003",
         "name": "1 Pollo a la brasa",
         "img": "/img/product-3.png",
         "description": "1 Pollo a la brasa + papas fritas + ensalada + cremas",
@@ -154,6 +156,7 @@ export const products = [
         "stock": 30
     },
     {
+        "id": "00004",
         "name": "2 Pollos a la brasa",
         "img": "/img/product-4.png",
         "description": "2 Pollos a la brasa + papas fritas + ensalada + cremas",
@@ -161,6 +164,7 @@ export const products = [
         "stock": 15
     },
     {
+        "id": "00005",
         "name": "Parrillera Suarez",
         "img": "/img/product-5.jpg",
         "description": "1/4 Pollo a la brasa + 2 anticuchos + ensalada + cremas",
