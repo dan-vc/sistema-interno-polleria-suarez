@@ -43,7 +43,7 @@
                 <a class="btn openPopup" data-target="addProductPopup">Añadir nuevo producto</a>
             </div>
 
-            <div id="render-products" data-add-btn="false" data-offset="0" data-limit="10" class="products-wrapper">
+            <div id="render-products" data-add-btn="false" data-stock-quantity="true" data-offset="0" data-limit="10" class="products-wrapper">
                 
             </div>
         </section>
@@ -52,7 +52,7 @@
     </main>
 
     <!-- Popup flotante -->
-    <div id="addProductPopup" class="popup">
+    <aside id="addProductPopup" class="popup">
         <div class="popup-content">
             <button id="closePopup" class="close-btn">✖</button>
 
@@ -96,7 +96,7 @@
             </form>
 
         </div>
-    </div>
+    </aside>
 
     <script type="module" src="/js/renderProducts.js"></script>
     <script src="/js/sidebar.js"></script>
