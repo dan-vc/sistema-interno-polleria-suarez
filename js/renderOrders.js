@@ -133,26 +133,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Delegación de eventos para los enlaces con clase "openPopup"
     document.addEventListener('click', (event) => {
         /* Si el elemento en el que se hace click tiene la case */
-        if (event.target.classList.contains('openPopup')) {
+        if (event.target.classList.contains('openPopup') && event.target.dataset.target === 'orderDetailPopup') {
             const orderId = event.target.dataset.id;
 
-            if (event.target.dataset.target === 'orderDetailPopup') {
-                
-                const popupContent = document.querySelector('#orderDetailPopup .popup-content');
-    
-                const order = orders.find(order => order.id === orderId)
-    
-                popupContent.querySelector('#OrderID').innerHTML = order.id;
-                popupContent.querySelector('#OrderDate').innerHTML = order.date;
-                popupContent.querySelector('#CustomerName').innerHTML = order.customer;
-                popupContent.querySelector('#CustomerAddress').innerHTML = order.address;
-                popupContent.querySelector('#OrderTotal').innerHTML = order.total.toFixed(2);
-    
-                let HTMLTemplate = "";
-                const orderProducts = products.filter(product => order.products.includes(product.id))
-    
-                orderProducts.forEach(product => {
-                    HTMLTemplate += `
+            const popupContent = document.querySelector('#orderDetailPopup .popup-content');
+
+            const order = orders.find(order => order.id === orderId)
+
+            popupContent.querySelector('#OrderID').innerHTML = order.id;
+            popupContent.querySelector('#OrderDate').innerHTML = order.date;
+            popupContent.querySelector('#CustomerName').innerHTML = order.customer;
+            popupContent.querySelector('#CustomerAddress').innerHTML = order.address;
+            popupContent.querySelector('#OrderTotal').innerHTML = order.total.toFixed(2);
+            if (order.status.toLowerCase() === 'completado') {
+                popupContent.querySelector('#completeOrderBtn').style.display = 'none';
+            } else {
+                popupContent.querySelector('#completeOrderBtn').style.display = 'block';
+            }
+
+            let HTMLTemplate = "";
+            const orderProducts = products.filter(product => order.products.includes(product.id))
+
+            orderProducts.forEach(product => {
+                HTMLTemplate += `
                         <tr>
                             <td>${product.id}</td>
                             <td>${product.name}</td>
@@ -180,10 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td>S/. ${product.price.toFixed(2)}</td>
                         </tr>
                     `
-                })
-    
-                popupContent.querySelector('#render-order-products').innerHTML = HTMLTemplate;
-            }
+            })
+
+            popupContent.querySelector('#render-order-products').innerHTML = HTMLTemplate;
         }
     });
 })
